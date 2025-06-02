@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pengumuman Kelulusan SD Inpres 22 Ambon</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    .login-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 250px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 15px;
+      cursor: pointer;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pengumuman Kelulusan</h1>
+  <p>Tahun Pelajaran 2024/2025</p>
+  <p>SD Inpres 22 Ambon</p>
+
+  <div class="login-box">
+    <h2>Masukkan NISN Anda</h2>
+    <input type="text" id="nisnInput" placeholder="Contoh: 3129508627" />
+    <br>
+    <button onclick="cekKelulusan()">Cek Kelulusan</button>
+    <div class="result" id="resultBox"></div>
+  </div>
+
+  <script>
+    const dataSiswa = {
+      "3129508627": "Achmad Fadil Walla",
+      "3131069724": "Ainun Mahya Junaidin",
+      "3131297482": "Akbar Nurlaba",
+      "3135552206": "Andi Marege Setiawan Walla",
+      "3122170480": "Andini",
+      "3129653375": "Anggun Anzzaalia Tiyan",
+      "3122425651": "Damora Rahakbaw",
+      "3127600862": "Dilan Fauzan Rezky",
+      "3137122135": "Fathin Ramdhani Lamasi",
+      "3134292639": "Fildzah Maylova Usman La Impo",
+      "3133794751": "Fitriyah Zahra Khairunnisa Rumodar",
+      "3125103738": "Julkifri Tuhulele",
+      "3138043074": "Jumarsya Tallasa",
+      "0122509518": "Kayla Azzahra",
+      "3136236197": "Khaila",
+      "3139589980": "Kharisma Putri Risaholet",
+      "3131548644": "La Fitra",
+      "3136031332": "M Arafik Bin Haji",
+      "3125534636": "Maqfira Liem",
+      "3139270465": "Mutiyah",
+      "3139158134": "Muhamad Alif Febriansyah",
+      "3124952537": "Muhammad Fathir Wally",
+      "3139091046": "Patra Alamsyah Kamarullah Suatrat",
+      "3132286245": "Qhairan Alfarez Attamimi",
+      "3138945482": "Qotrunada Salsabila Umanailo",
+      "3136937781": "Radja Keenand Laitupa",
+      "3123502073": "Rafael Muhammad Lapandewa",
+      "3123406213": "Refan",
+      "3136784856": "Riswan Riski",
+      "3131165247": "Sazkia Raibah",
+      "3129564265": "Silvia Noviyanti",
+      "0136212294": "Sultan Aulia Nawi Kaimuddin",
+      "3134372261": "Sultan Keenard Laitupa",
+      "3137471102": "Syah Reza Muhamad",
+      "3134182634": "Tarra Febriati Rizal",
+      "3132817824": "Titin Amsa",
+      "0135168584": "Wa Hadis",
+      "3134810928": "Zain Maulna"
+    };
+
+    function cekKelulusan() {
+      const nisn = document.getElementById("nisnInput").value.trim();
+      const resultBox = document.getElementById("resultBox");
+
+      if (dataSiswa[nisn]) {
+        resultBox.innerHTML = `<div class="success">Nama: <strong>${dataSiswa[nisn]}</strong><br>Status: <strong>LULUS</strong></div>`;
+      } else {
+        resultBox.innerHTML = `<div class="error">NISN tidak ditemukan. Silakan periksa kembali.</div>`;
+      }
+    }
+  </script>
+</body>
+</html>
